@@ -2,10 +2,13 @@
   "private": true,
   "main": "main/index.js",
   "productName": "ElectronTypescriptNext",
+  "description": "Testing App",
+  "name": "nextelectronapp",
+  "version": "0.0.1",
   "scripts": {
     "clean": "rimraf dist main renderer/out renderer/.next",
     "dev": "npm run build-electron && electron .",
-    "build-renderer": "next build renderer && next export renderer",
+    "build-renderer": "next build renderer",
     "build-electron": "tsc -p electron-src",
     "build": "npm run build-renderer && npm run build-electron",
     "pack-app": "npm run build && electron-builder --dir",
@@ -13,26 +16,26 @@
     "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./electron-src/tsconfig.json"
   },
   "dependencies": {
-    "electron-is-dev": "^1.1.0",
+    "electron-is-dev": "^2.0.0",
     "electron-next": "^3.1.5",
+    "next": "^13.2.5-canary.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.6",
-    "@types/react": "^16.9.9",
-    "@types/react-dom": "^16.9.9",
-    "electron": "^13",
+    "@types/node": "^18.15.10",
+    "@types/react": "^18.0.29",
+    "@types/react-dom": "^18.0.11",
+    "electron": "^23.0.0",
     "electron-builder": "^23.0.3",
-    "next": "latest",
     "rimraf": "^3.0.0",
-    "typescript": "^4.0.5"
+    "typescript": "^4.9.5"
   },
   "build": {
     "asar": true,
     "files": [
       "main",
-      "renderer/out"
+      "renderer"
     ]
   }
 }
